@@ -1,0 +1,45 @@
+<header class="text-gray-600 body-font">
+  <div
+    class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+  >
+    <a
+      class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+        ></path>
+      </svg>
+      <span class="ml-3 text-xl capitalize">e-commerce</span>
+    </a>
+    <nav
+      class="md:ml-auto capitalize md:mr-auto flex gap-10 flex-wrap items-center text-base justify-center"
+    >
+      <a class="hover:text-gray-900" *ngIf="isLogin">home</a>
+      <a class="hover:text-gray-900" *ngIf="isLogin">products</a>
+      <a class="hover:text-gray-900" *ngIf="isLogin">dashboard</a>
+      <a class="hover:text-gray-900" *ngIf="isLogin">profile</a>
+      <a class="hover:text-gray-900" *ngIf="isLogin">cart</a>
+    </nav>
+    <ul class="flex capitalize gap-4 text-base cursor-pointer">
+      <li class="text-primary" *ngIf="!isLogin" routerLink="login">login</li>
+      <li class="text-primary" *ngIf="!isLogin" routerLink="register">
+        register
+      </li>
+      <li class="text-primary" *ngIf="isLogin">
+        <a class="btn btn-outline-ftg" (click)="logOut()" routerLink="/login"
+          >Log Out</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>
